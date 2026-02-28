@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get All Users</title>
+</head>
+<body>
+
+  <h1>All Users</h1>
+  <button onclick="getUsers()">Fetch Users</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function getUsers() {
+      fetch("/api/users")
+        .then(res => res.json())
+        .then(data => {
+         console.log(data)
+        })
+        .catch(err => console.error(err));
+    }
+  </script>
+
+</body>
+</html>
